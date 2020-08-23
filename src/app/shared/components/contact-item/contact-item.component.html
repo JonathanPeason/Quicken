@@ -1,3 +1,37 @@
-<div *ngIf="contactData">
-{{contactData._id}} | {{contactData.firstName}} | {{contactData.lastName}} | {{contactData.company}} | {{contactData.email}} | {{contactData.phone}} | {{contactData.address}}
+<div #main *ngIf="contactData" class="contact-container">
+  <section #cardTop class="card-top">
+    <div
+      [title]="contactData._id"
+      class="id-tab"
+      [ngStyle]="{ 'width.px': cardTop.width }"
+    >
+      ID:{{ contactData._id }}
+    </div>
+    <div
+      class="name-circle"
+      [ngStyle]="{
+        'top.px': main.offsetHeight / 2 - 130,
+        'left.px': main.offsetWidth / 2 - 60
+      }"
+    >
+      <span [title]="contactData.firstName + ',' + contactData.lastName"
+        >{{ contactData.firstName }}, {{ contactData.lastName }}</span
+      >
+    </div>
+  </section>
+  <section #infoSection class="info-section">
+    <div *ngIf="contactData.company" class="info-block" [title]="contactData.company">
+      Company: {{ contactData?.company }}
+    </div>
+    <div *ngIf="contactData.email" class="info-block" [title]="contactData.email">
+      Email: {{ contactData?.email }}
+    </div>
+    <div *ngIf="contactData.phone" class="info-block" [title]="contactData.phone">
+      Phone: {{ contactData?.phone }}
+    </div>
+    <div *ngIf="contactData.address" class="info-block" [title]="contactData.address">
+      Address: {{ contactData?.address }}
+    </div>
+  </section>
+  <section class="card-controls"></section>
 </div>

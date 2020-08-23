@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ContactsApiService } from 'src/app/shared/services/contacts-api.service';
 
 @Component({
@@ -7,12 +7,8 @@ import { ContactsApiService } from 'src/app/shared/services/contacts-api.service
   styleUrls: ['./contacts-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContactsListComponent implements OnInit {
+export class ContactsListComponent {
 
   readonly contactsList$ = this.contactsService.currentContacts$;
   constructor(private contactsService: ContactsApiService) { }
-
-  ngOnInit(): void {
-  }
-
 }

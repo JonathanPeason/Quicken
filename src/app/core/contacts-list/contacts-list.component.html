@@ -1,3 +1,6 @@
 <div *ngIf="contactsList$ | async as contactsList" class="list-container">
-<app-contact-item *ngFor="let contact of contactsList;"  [contactData]="contact"></app-contact-item>
+  <app-contact-item
+    *ngFor="let contact of contactsList"
+    [contactData]="contact"
+  ></app-contact-item>
 </div>
