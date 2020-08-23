@@ -1,0 +1,13 @@
+// Breakpoints -------------------------------------
+$bp-360: 360px; // phone
+$bp-576: 576px; // Extra small screen / landscape phone
+$bp-768: 768px; // Medium screen / tablet
+$bp-992: 992px; // Large screen / desktop
+$bp-1200: 1200px; // Extra large screen / wide desktop
+
+@mixin breakpoint($bp, $direction: min) {
+  @media screen and (#{$direction}-width: $bp) {
+    @content;
+  }
+}
+
