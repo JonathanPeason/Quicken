@@ -1,1 +1,4 @@
-<h1>App Ready</h1>
+<div class="app-main">
+    <app-header *ngIf="contactList$ | async"></app-header>
+    <router-outlet></router-outlet>
+</div>
