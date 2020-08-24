@@ -1,5 +1,7 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, OnDestroy } from '@angular/core';
 import { ContactsApiService } from 'src/app/shared/services/contacts-api.service';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-contacts-list',
@@ -7,8 +9,25 @@ import { ContactsApiService } from 'src/app/shared/services/contacts-api.service
   styleUrls: ['./contacts-list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContactsListComponent {
-
+export class ContactsListComponent implements OnInit, OnDestroy {
   readonly contactsList$ = this.contactsService.currentContacts$;
-  constructor(private contactsService: ContactsApiService) { }
+  isList = this.router.url.includes('contacts');
+
+  private routeSub: Subscription;
+
+  constructor(private contactsService: ContactsApiService, private router: Router) { }
+
+  ngOnInit(): void {
+    this.routeSub = this.router.events.subscribe((val) => {
+      this.isList = this.router.url.includes('contacts');
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.routeSub.unsubscribe();
+  }
+
+  navToNew(): void {
+    this.router.navigate(['/new']);
+  }
 }

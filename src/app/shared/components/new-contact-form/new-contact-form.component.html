@@ -1,1 +1,158 @@
-<p>new-contact-form works!</p>
+<div #formCard class="form-card">
+  <div class="card-header">
+    New Contact:
+  </div>
+  <form class="form-container" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="input-container">
+      <div class="input-field">
+        <input
+          type="text"
+          formControlName="firstName"
+          id="fname"
+          [ngClass]="{
+            'input-error':
+              firstName.invalid && (firstName.dirty || firstName.touched),
+            'input-valid':
+              firstName.valid && (firstName.dirty || firstName.touched)
+          }"
+          required
+        />
+        <label
+          for="fname"
+          [ngClass]="{
+            'label-error':
+              firstName.invalid && (firstName.dirty || firstName.touched),
+            'label-valid':
+              firstName.valid && (firstName.dirty || firstName.touched)
+          }"
+          >First Name:</label
+        >
+      </div>
+      <div class="input-field">
+        <input
+          type="text"
+          formControlName="lastName"
+          id="lname"
+          [ngClass]="{
+            'input-error':
+              lastName.invalid && (lastName.dirty || lastName.touched),
+            'input-valid':
+              lastName.valid && (lastName.dirty || lastName.touched)
+          }"
+          required
+        />
+        <label
+          for="lname"
+          [ngClass]="{
+            'label-error':
+              lastName.invalid && (lastName.dirty || lastName.touched),
+            'label-valid':
+              lastName.valid && (lastName.dirty || lastName.touched)
+          }"
+          >Last Name:</label
+        >
+      </div>
+    </div>
+
+    <div class="input-container">
+      <div class="input-field">
+        <input
+          type="text"
+          formControlName="phone"
+          id="phone"
+          [ngClass]="{
+            'input-error': phone.invalid && (phone.dirty || phone.touched),
+            'input-valid': phone.valid && (phone.dirty || phone.touched)
+          }"
+          required
+        />
+        <label
+          for="phone"
+          [ngClass]="{
+            'label-error': phone.invalid && (phone.dirty || phone.touched),
+            'label-valid': phone.valid && (phone.dirty || phone.touched)
+          }"
+          >Phone:</label
+        >
+      </div>
+      <div class="input-field">
+        <input
+          type="text"
+          formControlName="address"
+          id="address"
+          [ngClass]="{
+            'input-error':
+              address.invalid && (address.dirty || address.touched),
+            'input-valid': address.valid && (address.dirty || address.touched)
+          }"
+          required
+        />
+        <label
+          for="address"
+          [ngClass]="{
+            'label-error':
+              address.invalid && (address.dirty || address.touched),
+            'label-valid': address.valid && (address.dirty || address.touched)
+          }"
+          >Address:</label
+        >
+      </div>
+    </div>
+
+    <div class="input-container">
+      <div class="input-field">
+        <input
+          type="text"
+          formControlName="company"
+          id="company"
+          [ngClass]="{
+            'input-error':
+              company.invalid && (company.dirty || company.touched),
+            'input-valid': company.valid && (company.dirty || company.touched)
+          }"
+          required
+        />
+        <label
+          for="company"
+          [ngClass]="{
+            'label-error':
+              address.invalid && (company.dirty || company.touched),
+            'label-valid': company.valid && (company.dirty || company.touched)
+          }"
+          >Company:</label
+        >
+      </div>
+      <div class="input-field">
+        <input
+          type="text"
+          formControlName="email"
+          id="email"
+          [ngClass]="{
+            'input-error':
+              emailAddress.invalid &&
+              (emailAddress.dirty || emailAddress.touched),
+            'input-valid':
+              emailAddress.valid && (emailAddress.dirty || emailAddress.touched)
+          }"
+          required
+        />
+        <label
+          for="email"
+          [ngClass]="{
+            'label-error':
+              emailAddress.invalid &&
+              (emailAddress.dirty || emailAddress.touched),
+            'label-valid':
+              emailAddress.valid && (emailAddress.dirty || emailAddress.touched)
+          }"
+          >Email:</label
+        >
+      </div>
+    </div>
+    <section #submit>
+      <button class="submit-button" type="submit" [disabled]="!contactForm.valid">Submit</button>
+      <span *ngIf="showSaved" class=" saved fade-in">Contact Saved!</span>
+    </section>
+    
+  </form>
+</div>

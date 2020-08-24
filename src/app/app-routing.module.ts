@@ -2,19 +2,19 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './core/home/home.component';
 import { ContactsListComponent } from './core/contacts-list/contacts-list.component';
-import { AddContactComponent } from './core/add-contact/add-contact.component';
+
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
   },
   {
-    path: 'list',
+    path: 'contacts',
     component: ContactsListComponent,
   },
   {
-    path: 'add',
-    component: AddContactComponent,
+    path: 'new',
+    component: ContactsListComponent,
   },
 ];
 

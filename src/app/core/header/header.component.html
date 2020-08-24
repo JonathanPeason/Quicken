@@ -1,3 +1,7 @@
 <div class="header-main">
-Here is the header
+  <section #logo></section>
+  <section class="nav-section" #nav>
+    <div class="nav" [ngClass]="{'active-nav': currentLoc === 'contacts'}" (click)="navToContacts()">Contacts</div>
+    <div class="nav" [ngClass]="{'active-nav': currentLoc === 'new'}" (click)="navToNew()">New Contact</div>
+  </section>
 </div>

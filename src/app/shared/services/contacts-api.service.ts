@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class ContactsApiService {
   readonly currentContacts$ = new BehaviorSubject<Contact[]>([]);
-  private contactList: Contact[];
+  public contactList: Contact[];
 
   constructor(private http: HttpClient) {
     /*
@@ -27,6 +27,9 @@ export class ContactsApiService {
 
   public addNewContact(newContact: Contact): void {
     if (this.contactList) {
+      newContact.index = this.contactList.length;
+      // tempID, in realife we would likely get assigned ID if we were to add a new contact via api or we would generate a uui
+      newContact._id = `${newContact.firstName}-${this.contactList.length + 1}`;
       this.contactList.push(newContact);
       this.updateCurrentContacts();
     }
