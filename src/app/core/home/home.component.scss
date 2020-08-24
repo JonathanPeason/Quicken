@@ -1,8 +1,42 @@
+@import "../../../sass/common.scss";
+
 .home-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  padding-top: 50px;
+}
+
+.quicken-logo {
+  content: url("../../../assets/images/quicken-logo-round.png");
+  width: 150px;
+  @include breakpoint($bp-576) {
+    width: 200px;
+  }
+  @include breakpoint($bp-1400) {
+    width: 250px;
+  }
+  cursor: pointer;
+}
+
+.total-text {
+  padding-top: 20px;
+  cursor: pointer;
+  font-size: 30px;
+  @include breakpoint($bp-576) {
+    font-size: 50px;
+  }
+
+  @include breakpoint($bp-1400) {
+    font-size: 80px;
+  }
+  font-weight: bold;
+  color: #fff;
+  text-shadow: #ccc 0 1px 0, #c9c9c9 0 2px 0, #bbb 0 3px 0, #b9b9b9 0 4px 0,
+    #aaa 0 5px 0, rgba(0, 0, 0, 0.1) 0 6px 1px, rgba(0, 0, 0, 0.1) 0 0 5px,
+    rgba(0, 0, 0, 0.3) 0 1px 3px, rgba(0, 0, 0, 0.15) 0 3px 5px,
+    rgba(0, 0, 0, 0.2) 0 5px 10px, rgba(0, 0, 0, 0.2) 0 10px 10px,
+    rgba(0, 0, 0, 0.1) 0 20px 20px;
 }

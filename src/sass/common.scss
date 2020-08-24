@@ -4,10 +4,80 @@ $bp-576: 576px; // Extra small screen / landscape phone
 $bp-768: 768px; // Medium screen / tablet
 $bp-992: 992px; // Large screen / desktop
 $bp-1200: 1200px; // Extra large screen / wide desktop
+$bp-1400: 1400px; // Extra wide desktop
+$bp-1920: 1920px; // HD
+
+// Colors ------------------------------------------
+$error-color: #ff2300;
+$valid-color: #00dd22;
 
 @mixin breakpoint($bp, $direction: min) {
   @media screen and (#{$direction}-width: $bp) {
     @content;
+  }
+}
+
+.fade-in-slow {
+  opacity: 1;
+  animation: fadein 2s;
+  -webkit-animation: fadein 2s;
+}
+
+.fade-in {
+  opacity: 1;
+  animation: fadein 1s;
+  -webkit-animation: fadein 1s;
+}
+
+.scale-in-width {
+  width: 0%;
+  animation: widthSize 1s;
+  -webkit-animation: widthSize 1s;
+}
+
+.scale-n-translate {
+  animation: scaleNTrans 2s;
+  -webkit-animation: scaleNTrans 2s;
+}
+
+.scale-n-rotate {
+  animation: rotateNScale 1s;
+  -webkit-animation: rotateNScale 1s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes rotateNScale {
+  from {
+    transform: scale(.5) rotateY(90deg);
+  }
+  to {
+    transform: scale(1) rotateY(0deg);
+  }
+}
+
+@keyframes widthSize {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes scaleNTrans {
+  from {
+    transform: scale(0) translate3d(0, 200px, 0);
+  }
+  to {
+    transform: scale(1) translate3d(0, 0, 0);
   }
 }
 

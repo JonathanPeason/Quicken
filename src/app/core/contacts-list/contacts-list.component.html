@@ -1,3 +1,11 @@
-<div *ngIf="contactsList$ | async as contactsList" class="list-container">
-<app-contact-item *ngFor="let contact of contactsList;"  [contactData]="contact"></app-contact-item>
+<div *ngIf="isList && (contactsList$ | async) as contactsList" class="list-container">
+  <app-contact-item
+    *ngFor="let contact of contactsList"
+    [contactData]="contact"
+  ></app-contact-item>
 </div>
+
+<div *ngIf="!isList" class="new-container">
+  <app-new-contact-form></app-new-contact-form>
+</div>
+

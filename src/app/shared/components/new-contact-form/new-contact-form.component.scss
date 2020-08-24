@@ -1,0 +1,133 @@
+@import "../../../../sass/common.scss";
+
+.form-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.3);
+  min-width: 260px;
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 25px;
+    background-color: rgb(162, 223, 170);
+  }
+.form-container {
+    padding: 25px;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  @include breakpoint($bp-576) {
+    flex-direction: row;
+  }
+}
+
+.input-field {
+  position: relative;
+  width:150px;
+  height: 44px;
+  line-height: 44px;
+  margin: 10px 20px 10px 0px;
+
+  @include breakpoint($bp-768) {
+    width: 220px;
+  }
+  @include breakpoint($bp-992) {
+    width: 250px;
+  }
+
+  @include breakpoint($bp-1200) {
+    width: 300px;
+  }
+
+  @include breakpoint($bp-1400) {
+    width: 400px;
+  }
+}
+
+label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #8f8f8f;
+  transition: 0.2s all;
+  cursor: text;
+}
+input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  padding: 0.5rem 0;
+  border-bottom: 2px solid #d3d3d3;
+  box-shadow: none;
+  color: #111;
+}
+
+.input-error {
+  color: $error-color;
+  border-color: $error-color;
+}
+
+.input-valid {
+  color: $valid-color;
+  border-color: $valid-color;
+}
+
+.label-error {
+  color: $error-color;
+}
+
+.label-valid {
+  color: $valid-color;
+}
+
+input:focus ~ label,
+input:valid ~ label {
+  font-size: 14px;
+  top: -24px;
+}
+
+.submit-button {
+	box-shadow:inset 0px 34px 0px -15px #5dd45b;
+	background-color:#2da753;
+	border:1px solid #241d13;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	font-weight:bold;
+	padding:12px 29px;
+	text-decoration:none;
+	text-shadow:0px -1px 0px #10632a;
+}
+.submit-button :hover {
+	background-color:#35bb60;
+}
+.submit-button :active {
+	position:relative;
+	top:1px;
+}
+
+.submit-button:disabled,
+.submit-button[disabled]{
+  opacity: .5;
+}
+
+.saved {
+  color: #2da753;
+  font-size:  18px;
+  margin-left: 10px;
+}
+

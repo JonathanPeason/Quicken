@@ -1,3 +1,4 @@
-<div class="home-container">
-Home Works
+<div *ngIf="contactList$ | async as list" class="home-container">
+  <img (click)="navToContacts()" class="quicken-logo scale-n-translate" />
+  <div (click)="navToContacts()" class="total-text scale-n-translate">Total Contacts: {{ list.length }}</div>
 </div>

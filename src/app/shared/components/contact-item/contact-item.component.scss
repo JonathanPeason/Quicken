@@ -1,4 +1,120 @@
+@import '../../../../sass/common.scss';
+
 .contact-container {
-    width: 100%;
-    display: flex;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  margin: 10px 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 250px;
+  height: 350px;
+  transition: 0.5s;
+  background-color: white;
+  cursor: pointer;
 }
+
+.contact-container:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-top {
+  width: 100%;
+  height: 40%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background: linear-gradient(
+    0deg,
+    rgba(201, 212, 223, 1) 0%,
+    rgba(243, 246, 255, 1) 34%,
+    rgba(255, 255, 255, 1) 100%
+  );
+}
+
+.card-controls {
+    width: 100%;
+    min-height: 30px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    background-color: rgb(178, 204, 231);
+    display: flex;
+    align-items: center;
+}
+
+.id-tab {
+  padding-left: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  background-color: rgb(178, 204, 231);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.name-circle {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: white solid 3px;
+  background-color: white;
+  -webkit-box-shadow: inset 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow: inset 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow: inset 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+}
+
+.info-section {
+  width: 100%;
+  padding-top: 40px;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.info-block {
+  display: flex;
+  align-items: center;
+  padding: 0 5px 0px 10px;
+  border-bottom: lightgray solid 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 10px;
+}
+
+.company-icon {
+  content: url("../../../../assets/images/company-icon.png");
+  width: 20px;
+}
+
+.email-icon {
+  content: url("../../../../assets/images/email-icon.png");
+  width: 15px;
+}
+
+.phone-icon {
+  content: url("../../../../assets/images/phone-icon.png");
+  width: 15px;
+}
+
+.address-icon {
+  content: url("../../../../assets/images/address-icon.png");
+  width: 20px;
+}
+.trash-icon {
+  transition: 0.5s;
+  margin-left: 10px;
+  cursor: pointer;
+  content: url("../../../../assets/images/trash-icon.png");
+  width: 20px;
+}
+
+.trash-icon:hover {
+  transform: scale(1.25);
+}
+
