@@ -38,6 +38,8 @@
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     background-color: rgb(178, 204, 231);
+    display: flex;
+    align-items: center;
 }
 
 .id-tab {
@@ -73,10 +75,45 @@
   font-size: 14px;
   overflow: hidden;
 }
+
 .info-block {
+  display: flex;
+  align-items: center;
   padding: 0 5px 0px 10px;
   border-bottom: lightgray solid 1px;
   overflow: hidden;
   text-overflow: ellipsis;
   margin-bottom: 10px;
 }
+
+.company-icon {
+  content: url("../../../../assets/images/company-icon.png");
+  width: 20px;
+}
+
+.email-icon {
+  content: url("../../../../assets/images/email-icon.png");
+  width: 15px;
+}
+
+.phone-icon {
+  content: url("../../../../assets/images/phone-icon.png");
+  width: 15px;
+}
+
+.address-icon {
+  content: url("../../../../assets/images/address-icon.png");
+  width: 20px;
+}
+.trash-icon {
+  transition: 0.5s;
+  margin-left: 10px;
+  cursor: pointer;
+  content: url("../../../../assets/images/trash-icon.png");
+  width: 20px;
+}
+
+.trash-icon:hover {
+  transform: scale(1.25);
+}
+

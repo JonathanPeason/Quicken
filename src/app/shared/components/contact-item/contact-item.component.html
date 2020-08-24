@@ -21,17 +21,19 @@
   </section>
   <section #infoSection class="info-section">
     <div *ngIf="contactData.company" class="info-block" [title]="contactData.company">
-      Company: {{ contactData?.company }}
+      <img class="company-icon">: {{ contactData?.company }}
     </div>
     <div *ngIf="contactData.email" class="info-block" [title]="contactData.email">
-      Email: {{ contactData?.email }}
+      <img class="email-icon">: {{ contactData?.email }}
     </div>
     <div *ngIf="contactData.phone" class="info-block" [title]="contactData.phone">
-      Phone: {{ contactData?.phone }}
+      <img class="phone-icon">: {{ contactData?.phone }}
     </div>
     <div *ngIf="contactData.address" class="info-block" [title]="contactData.address">
-      Address: {{ contactData?.address }}
+      <img class="address-icon"> {{ contactData?.address }}
     </div>
   </section>
-  <section class="card-controls"></section>
+  <section class="card-controls">
+    <img class="trash-icon" (click)="deletContact()">
+  </section>
 </div>

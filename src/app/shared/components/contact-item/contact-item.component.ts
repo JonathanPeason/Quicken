@@ -1,5 +1,6 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { Contact } from '../../model/data-interface';
+import { ContactsApiService } from '../../services/contacts-api.service';
 
 @Component({
   selector: 'app-contact-item',
@@ -7,13 +8,17 @@ import { Contact } from '../../model/data-interface';
   styleUrls: ['./contact-item.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ContactItemComponent implements OnInit {
+export class ContactItemComponent {
 
   @Input() contactData: Contact;
 
-  constructor() { }
+  constructor(private contactService: ContactsApiService) { }
 
-  ngOnInit(): void {
+  /**
+   * @description class service to delete this current contact
+   */
+  deletContact(): void {
+    this.contactService.removeContact(this.contactData.index);
   }
 
 }

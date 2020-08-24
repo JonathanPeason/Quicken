@@ -25,6 +25,10 @@ export class ContactsApiService {
       });
   }
 
+  /**
+   * @description adds a new contact to the contact list.
+   * @param newContact contact object to add
+   */
   public addNewContact(newContact: Contact): void {
     if (this.contactList) {
       newContact.index = this.contactList.length;
@@ -35,14 +39,24 @@ export class ContactsApiService {
     }
   }
 
+  /**
+   * @description deletes a contact from the list
+   * @param index index of the item to be removed
+   */
   public removeContact(index = -1): void {
-    if (index < this.contactList?.length - 1 && index > -1) {
+    if (index < this.contactList?.length && index > -1) {
       this.contactList.splice(index, 1);
       this.updateCurrentContacts();
     }
   }
 
+  /**
+   * @description updated the contact list and sets the correct index
+   */
   private updateCurrentContacts(): void {
+    this.contactList.forEach((value, index) => {
+      value.index = index;
+    });
     this.currentContacts$.next(this.contactList);
   }
 }

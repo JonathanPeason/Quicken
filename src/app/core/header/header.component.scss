@@ -1,9 +1,12 @@
+@import '../../../sass/common.scss';
+
 .header-main {
   display: flex;
   height: 80px;
   width: 100%;
   box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.3);
   margin-bottom: 50px;
+  overflow: hidden;
 }
 
 .nav-section {
@@ -12,6 +15,7 @@
 }
 
 .nav {
+  font-size: 12px;
   text-transform: uppercase;
   text-decoration: none;
   font-weight: bold;
@@ -20,6 +24,13 @@
   padding: 5px;
   margin-right: 20px;
   cursor: pointer;
+  @include breakpoint($bp-576) {
+    font-size: 16px;
+  }
+
+  @include breakpoint($bp-1200) {
+    font-size: 18px;
+  }
 }
 
 .nav::before {
@@ -41,6 +52,33 @@
 }
 
 .active-nav {
-  background-color: lightgray;
-  border-radius: 5px;
+  transform: scaleX(1.1);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.active-nav::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: red;
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.logo {
+  content:url('../../../assets/images/header-quicken-logo.png');
+  cursor: pointer;
+  width: 90px;
+  margin-right: 20px;
+  margin-left: 10px;
+  @include breakpoint($bp-576) {
+    width: 150px;
+  }
+
+  @include breakpoint($bp-1200) {
+    width: 200px;
+  }
 }

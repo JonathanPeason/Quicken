@@ -22,6 +22,7 @@ export class NewContactFormComponent {
     address: new FormControl('', Validators.required),
   });
 
+  // Make accessors for all fields so visual responses can be given for validiation...
   get firstName(): AbstractControl {
     return this.contactForm.get('firstName');
   }
@@ -54,6 +55,8 @@ export class NewContactFormComponent {
     console.log('serialized input data', JSON.stringify(newContact));
     this.contactForm.reset();
     this.showSaved = true;
+
+    // Make a sort delay to display the saved message before navigating, you could also use rxjs timer if desired...
     setTimeout(() => {
       this.showSaved = false;
       this.router.navigate(['/contacts']);

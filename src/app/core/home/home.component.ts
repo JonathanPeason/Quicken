@@ -1,4 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ContactsApiService } from 'src/app/shared/services/contacts-api.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -6,11 +8,12 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   styleUrls: ['./home.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor() { }
+  readonly contactList$ = this.contactsService.currentContacts$;
+  constructor(private contactsService: ContactsApiService, private router: Router) { }
 
-  ngOnInit(): void {
+  navToContacts(): void {
+    this.router.navigate(['/contacts']);
   }
-
 }
