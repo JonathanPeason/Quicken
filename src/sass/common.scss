@@ -40,12 +40,26 @@ $valid-color: #00dd22;
   -webkit-animation: scaleNTrans 2s;
 }
 
+.scale-n-rotate {
+  animation: rotateNScale 1s;
+  -webkit-animation: rotateNScale 1s;
+}
+
 @keyframes fadein {
   from {
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes rotateNScale {
+  from {
+    transform: scale(.5) rotateY(90deg);
+  }
+  to {
+    transform: scale(1) rotateY(0deg);
   }
 }
 
